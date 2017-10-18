@@ -1,0 +1,70 @@
+#!/bin/sh
+########################################################################
+#
+# My attempt of a general purpose script to run a java main()
+# class. It assumes that the all classes to be executed are in the
+# same package, namely 'programs' (this can be changed below). Make a
+# soft link with the class name (sans 'programs') to this script. For
+# example for the class 'programs.Grep', link this script to 'Grep' in
+# a directory in your path.
+
+# If you want to pass arguments to the java virtual machine, they
+# must come first as command line arguments and must be terminated by
+# '::' (this can be changed below). Example:
+#
+#    Grep -Xmx1000m :: params of grep come here
+#
+# If you don't want to pass args to the JVM but your program needs '::'
+# as a parameter, then your very first param must be '::', as in
+#
+#    Grep :: :: more args here
+#
+# which is equivalent to
+#    
+#    java programs.Grep :: more args here
+#
+# NOTE: This script does not try to mess with CLASSPATH. It is assumed
+# that your CLASSPATH is set up correctly before you start this
+# script.
+#
+########################################################################
+
+# who are we
+argv0=`basename $0`
+
+# The class name prefix to be put in front of all class names. The if
+# thingy allows easy patching by ant.
+cpfix="monq.programs."
+if [ "$cpfix" = "@"cpfix"@" ]; then cpfix='programs.' ;fi
+
+# the marker on the command line to terminate the list of arguments to
+# be passed to the VM, if any
+vmargsEnd='::'
+
+# This is the name of the class we want to call
+class="${cpfix}${argv0}"
+
+# Copy "$@" to the end of $@ while replacing $vmargsEnd with the class
+# name. If $vmargsEnd is not found, the class name will be put in
+# front of cmd later on. First thing in the first round through the
+# loop is to reset $@, because I don't know how to do it before the loop.
+i=0
+for x in "$@"; do
+  if [ $i -eq 0 ]; then set --; fi
+  if [ "$x" = "$vmargsEnd" ]; then 
+    set -- "$@" "$class"
+    class=''
+  else
+    set -- "$@" "$x"
+  fi
+  i=1
+done
+
+# If we did not find $vmargsEnd, we have to insert the class name still.
+if [ "$class" != '' ]; then
+  set -- java "-Dargv0=$argv0" "$class" "$@" 
+else
+  set -- java "-Dargv0=$argv0" "$@"
+fi
+exec "$@"
+

@@ -1,0 +1,24 @@
+#Prepared by Senay Kafkas
+#August, 2017- BORG, KAUST
+
+#Whatizit is an annotation tool for semantic types. 
+#This documentation describes how to run the whatizit annotation pipeline
+#Please Note that this pipeline utilises dictionaries (E.g. Uniprot, EFO, HPO, etc) that must be generated in a specific format (called MWT, it is an xml-like format) and plugged in to the pipeline. Currently, the Swissprot-human dictionary is plugged in. If you like to use another dictionary, you need to generate it in MWT format (see the swissport one as an example) and modify the dictionary file name in the FT_Annotator.sh script accordingly.
+
+
+#How to run the pipeline on your local machine (for a single input file)?
+zcat Path_2_Corpora/Some_FullText_File.xml.gz|sh Path_2_Scripts/FT_Annotator.sh |gzip >OutputFile.xml.gz
+
+#How to run the pipleine on clusters (for a single input file)?
+sbatch run.sh SomeFullText_File.xml.gz
+
+#How to run the pipleine on clusters (for multiple input files)?
+sbatch --array=0-X run2.sh
+X is a number, used for #Number_of_files -1
+
+#Notes
+InPut and OutPut directories are hard coded in the run.sh or run2.sh scripts
+Full Text XML files to be processed can be downloaded from http://europepmc.org/downloads.
+
+
+

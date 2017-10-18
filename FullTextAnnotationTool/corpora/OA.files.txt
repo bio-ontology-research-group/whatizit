@@ -1,0 +1,2 @@
+0:sample1.xml.gz
+1:sample2.xml.gz
