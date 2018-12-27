@@ -9,7 +9,7 @@
 #How to run the pipeline on your local machine (for a single input file)?
 cat Path_2_Corpora/Some_Abstracts_File.xml|sh Path_2_Scripts/Abs_Annotator.sh |gzip >OutputFile.xml.gz
 
-#How to run the pipleine on clusters (for a single input file)?
+#How to run the pipeline on clusters (for a single input file)?
 sbatch run.sh Some_Abstracts_File.xml
 
 #How to run the pipeline on clusters (for multiple input files)?
