@@ -1,13 +1,13 @@
 # whatizit
 A dictionary-based Named Entitiy Recognition tool
 
-*AbstractAnnotationTool*
+**AbstractAnnotationTool**
   
 This folder contains a tool for annotating Abstracts
 
 
 
-*FullTextAnnotationTool*
+**FullTextAnnotationTool**
 
 This folder contains a tool for annotating Full text articles
 
