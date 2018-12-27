@@ -9,10 +9,10 @@
 #How to run the pipeline on your local machine (for a single input file)?
 zcat Path_2_Corpora/Some_FullText_File.xml.gz|sh Path_2_Scripts/FT_Annotator.sh |gzip >OutputFile.xml.gz
 
-#How to run the pipleine on clusters (for a single input file)?
+#How to run the pipeline on clusters (for a single input file)?
 sbatch run.sh SomeFullText_File.xml.gz
 
-#How to run the pipleine on clusters (for multiple input files)?
+#How to run the pipeline on clusters (for multiple input files)?
 sbatch --array=0-X run2.sh
 X is a number, used for #Number_of_files -1
 
