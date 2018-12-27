@@ -6,7 +6,7 @@
 # paths
 WHATIZIT=..
 WHATIZITXX=$WHATIZIT/lib
-DICXX=$WHATIZIT/automata
+DICXX=$WHATIZIT/automata #This folder contains the dictionaries (in MWT format) that will be used in the annotation process.
 
 #JAVA_HOME=~/packages/jdk1.8.0_66
 #JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131-2.6.9.0.el7_3.x86_64/jre
@@ -22,7 +22,7 @@ OTHERS=$WHATIZITXX/monq.jar:$WHATIZITXX/mallet.jar:$WHATIZITXX/mallet-deps.jar:$
 
 # commands
 #works as stdin and stdout
-#These are for removing the annotations in the references
+#These processes are for removing the annotations in the references sections of articles
 ADDTEXT="$JAVA_HOME/bin/java -XX:+UseSerialGC -cp $OTHERS:$WHATIZITXX/pmcxslpipe140627.jar\
  ebi.ukpmc.xslpipe.Pipeline -stdpipe -stageSpotText"
 OUTTEXT="$JAVA_HOME/bin/java -XX:+UseSerialGC -cp $OTHERS:$WHATIZITXX/pmcxslpipe140529.jar\
