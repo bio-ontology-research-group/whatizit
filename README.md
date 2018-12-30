@@ -13,3 +13,5 @@ This folder contains a tool for annotating Full text articles
 
 
 *Please follow the intsructions in the scripts folder of each tool to run the tools*
+
+Licence: CC-BY-NC. Available for academic purposes only.
