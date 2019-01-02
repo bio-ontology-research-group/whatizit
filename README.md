@@ -2,18 +2,18 @@
 A dictionary-based Named Entitiy Recognition tool
 
 
-How to use?
+**How to use?**
 
 You need to create dictionaries based on mwt format
 
 MWT dictionary format:
 
-<mwt>
+*<mwt>
   <template><mwt>
   <template><z:Onto id="%1" cat="%2">%0</z:Onto></template>
   <r p1="$IDs" p2="$CATHEGORY" >$PATTERN</r>
 </mwt>
-    
+ *   
    ids: comma separated IDs in a given ontology
    category: entity type (e.g. phenotype, gene etc)
 
