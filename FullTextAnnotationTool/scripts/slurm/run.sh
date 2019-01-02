@@ -5,8 +5,7 @@
 #SBATCH --time 08:00:00 # time, specify max time allocation
 #SBATCH -e slurm.%N.%j.err # STDERR , $1 represents the file name processed from your corpora folder
 #SBATCH --mail-type=END,FAIL # notifications for job done & fail
-#SBATCH --mail-user=senay.kafkas@kaust.edu.sa  
-#SBATCH --cpus-per-task=10
+#SBATCH --mail-user=xx@yy.com ##specify your e-mail address  
 
 
 INPUT_DIR="/scratch/dragon/intel/kafkass/whatizit/FullTextAnnotationTool/corpora";
