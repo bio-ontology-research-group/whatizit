@@ -9,14 +9,19 @@ You need to create dictionaries based on mwt format
 MWT dictionary format:
 
 `<mwt>
-  <template><mwt>
-  <template><z:Onto id="%1" cat="%2">%0</z:Onto></template>
-  <r p1="$IDs" p2="$CATHEGORY" >$PATTERN</r>
-</mwt>
- `   
+ 
+ <template><mwt>
+ 
+ <template><z:Onto id="%1" cat="%2">%0</z:Onto></template>
+ 
+ <r p1="$IDs" p2="$CATHEGORY" >$PATTERN</r>
+
+</mwt> `   
+ 
  
  *ids: comma separated IDs in a given ontology
-   category: entity type (e.g. phenotype, gene etc)*
+  
+  category: entity type (e.g. phenotype, gene etc)*
 
 Example dictionaries can be found in the automata folder of each tool.
 
