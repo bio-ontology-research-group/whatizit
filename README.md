@@ -21,9 +21,9 @@ MWT dictionary format:
 ``` 
  
  
- *ids: comma separated IDs in a given ontology
+ `ids: comma separated IDs in a given ontology
   
-  category: entity type (e.g. phenotype, gene etc)*
+  category: entity type (e.g. phenotype, gene etc)`
 
 Example dictionaries can be found in the automata folder of each tool.
 
