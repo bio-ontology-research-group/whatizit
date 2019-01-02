@@ -8,9 +8,6 @@
 #SBATCH --mail-user=senay.kafkas@kaust.edu.sa  
 #SBATCH --cpus-per-task=10
 #SBATCH --job-name=OA_FT_Annotation
-
-###     #SBATCH --partition=batch
-
 #SBATCH --array=0-1
 
 
