@@ -8,7 +8,8 @@ You need to create dictionaries based on mwt format
 
 MWT dictionary format:
 
-`<mwt>
+`
+<mwt>
  
  <template><mwt>
  
@@ -16,7 +17,8 @@ MWT dictionary format:
  
  <r p1="$IDs" p2="$CATHEGORY" >$PATTERN</r>
 
-</mwt> `   
+</mwt> 
+`   
  
  
  *ids: comma separated IDs in a given ontology
