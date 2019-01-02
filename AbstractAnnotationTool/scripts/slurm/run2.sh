@@ -5,13 +5,12 @@
 #SBATCH --time 2-00:00:00 # time, specify max time allocation
 #SBATCH -e slurm.%N.%j.err # STDERR , $1 represents the file name processed from your corpora folder
 #SBATCH --mail-type=END,FAIL # notifications for job done & fail
-#SBATCH --mail-user=senay.kafkas@kaust.edu.sa  
-#SBATCH --cpus-per-task=10
+#SBATCH --mail-user=xx@yy.com #your_email_address 
 #SBATCH --job-name=OA_FT_Annotation
 
 ###     #SBATCH --partition=batch
 
-#SBATCH --array=0-1
+#SBATCH --array=0-1 ## 1 is the last index in the input file (e.g. OA.files.txt)
 
 
 echo "Job ID=$SLURM_JOB_ID,  Running task:$SLURM_ARRAY_TASK_ID" 
